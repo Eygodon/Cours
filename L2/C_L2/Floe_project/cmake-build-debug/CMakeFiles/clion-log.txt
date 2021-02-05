@@ -1,0 +1,4 @@
+C:\Users\33645\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\193.6015.37\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" H:\Travail\progra\C-projects\Floe\Floe\Floe_project
+-- Configuring done
+-- Generating done
+-- Build files have been written to: H:/Travail/progra/C-projects/Floe/Floe/Floe_project/cmake-build-debug

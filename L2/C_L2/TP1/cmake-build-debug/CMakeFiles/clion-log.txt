@@ -1,0 +1,24 @@
+C:\Users\33645\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\193.6015.37\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" C:\Users\33645\CLionProjects\TP1
+CMake Error at CMakeLists.txt:2 (project):
+  The CMAKE_C_COMPILER:
+
+    C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.20.27508/bin/Hostx86/x86/cl.exe
+
+  is not a full path to an existing compiler tool.
+
+  To use the NMake generator with Visual C++, cmake must be run from a shell
+  that can use the compiler cl from the command line.  This environment is
+  unable to invoke the cl compiler.  To fix this problem, run cmake from the
+  Visual Studio Command Prompt (vcvarsall.bat).
+
+  Tell CMake where to find the compiler by setting either the environment
+  variable "CC" or the CMake cache entry CMAKE_C_COMPILER to the full path to
+  the compiler, or to the compiler name if it is in the PATH.
+
+
+-- Configuring incomplete, errors occurred!
+See also "C:/Users/33645/CLionProjects/TP1/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+Cannot read C:\Users\33645\CLionProjects\TP1\cmake-build-debug\CMakeFiles\3.15.3\CMakeCCompiler.cmake
+
+Cannot get compiler information:
+	Cannot run program "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\bin\Hostx86\x86\cl.exe" (in directory "C:\Users\33645\CLionProjects\TP1\cmake-build-debug"): CreateProcess error=2, Le fichier spécifié est introuvable

@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1581072807 source:c:\users\vince\desktop\progra en c\programmes\tp3\biblio\tableaux.c
+	"tableaux.h"
+
+1581072630 c:\users\vince\desktop\progra en c\programmes\tp3\biblio\tableaux.h
+
+1581071451 source:c:\users\vince\desktop\progra en c\programmes\tp3\biblio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"tableaux.h"
+

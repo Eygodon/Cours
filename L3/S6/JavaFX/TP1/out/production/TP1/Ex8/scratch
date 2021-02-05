@@ -1,0 +1,55 @@
+ private final int size;
+     private Label[][] labels;
+     private int _cell_size = 20;
+
+     public static void fillCase(Region r)
+     {
+         r.setMaxHeight(Double.MAX_VALUE);
+         r.setMaxWidth(Double.MAX_VALUE);
+     }
+
+     public Damier(int size)
+     {
+         super();
+         this.setHgap(2);
+         this.setVgap(2);
+         this.size = size;
+         this.labels = new Label[this.size + 1][this.size + 1];
+         this.labels[0][0] = new Label(" ");
+         // Première Colonne
+         for (int i = 1; i < this.size; i++)
+         {
+             ColumnConstraints cc = new ColumnConstraints(_cell_size);
+             this.getColumnConstraints().add(cc);
+             labels[0][i] = new Label(String.valueOf(i));
+         }
+         // Première ligne
+         for (int j = 1; j < this.size; j++)
+         {
+             RowConstraints rc = new RowConstraints(_cell_size);
+             this.getRowConstraints().add(rc);
+             labels[j][0] = new Label(String.valueOf((char)(j + 64)));
+         }
+         // Chaque case du damier
+         for (int i = 1; i < this.size + 1; i++)
+         {
+             for (int j = 1; j < this.size + 1; j++)
+             {
+                 labels[i][j] = new Label(" ");
+                 labels[i][j].setBackground(new Background(new BackgroundFill(Color.RED, new CornerRadii(0), new Insets(0))));
+             }
+         }
+         // Ajout de toutes les cases dans le gridpane
+         for (int i = 0; i < this.size + 1; i++)
+         {
+             for (int j = 0; j < this.size + 1 ; j++)
+             {
+                 fillCase(labels[i][j]); // TODO null element ??
+                 labels[i][j].setTextAlignment(TextAlignment.CENTER);
+                 labels[i][j].setAlignment(Pos.CENTER);
+                 this.add(labels[i][j], i, j);
+             }
+         }
+         // Style
+
+     }

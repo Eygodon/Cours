@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1580983289 source:c:\users\vince\desktop\progra en c\programmes\tp3\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1580986520 source:c:\users\vince\desktop\progra en c\programmes\tp3\structures de données\main.c
+	<stdio.h>
+	<stdlib.h>
+

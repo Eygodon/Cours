@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+H:/Travail/progra/C-projects/Floe/Floe/Floe_project/Floe.c
+stdio.h
+-
+stdlib.h
+-
+time.h
+-
+Floe.h
+H:/Travail/progra/C-projects/Floe/Floe/Floe_project/Floe.h
+game.h
+H:/Travail/progra/C-projects/Floe/Floe/Floe_project/game.h
+
+H:/Travail/progra/C-projects/Floe/Floe/Floe_project/Floe.h
+objects.h
+H:/Travail/progra/C-projects/Floe/Floe/Floe_project/objects.h
+
+H:/Travail/progra/C-projects/Floe/Floe/Floe_project/Player.h
+stdlib.h
+H:/Travail/progra/C-projects/Floe/Floe/Floe_project/stdlib.h
+stdio.h
+H:/Travail/progra/C-projects/Floe/Floe/Floe_project/stdio.h
+string.h
+-
+
+H:/Travail/progra/C-projects/Floe/Floe/Floe_project/game.h
+windows.h
+-
+string.h
+-
+Floe.h
+H:/Travail/progra/C-projects/Floe/Floe/Floe_project/Floe.h
+
+H:/Travail/progra/C-projects/Floe/Floe/Floe_project/objects.h
+Player.h
+H:/Travail/progra/C-projects/Floe/Floe/Floe_project/Player.h
+

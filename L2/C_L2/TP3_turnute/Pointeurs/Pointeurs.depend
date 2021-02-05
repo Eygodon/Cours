@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1514140574 source:c:\users\vince\desktop\progra en c\programmes\tp3\pointeurs\main.cpp
+	<iostream>
+
+1581070603 source:c:\users\vince\desktop\progra en c\programmes\tp3\pointeurs\main.c
+	<stdio.h>
+	<stdlib.h>
+

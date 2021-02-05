@@ -1,0 +1,36 @@
+# depslib dependency file v1.0
+1585682596 source:c:\users\foxy\documents\github\floe\floe_project\floe.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"Floe.h"
+	"game.h"
+
+1585665329 c:\users\foxy\documents\github\floe\floe_project\floe.h
+	"objects.h"
+
+1585263545 c:\users\foxy\documents\github\floe\floe_project\objects.h
+	"Player.h"
+
+1585665329 c:\users\foxy\documents\github\floe\floe_project\player.h
+	"stdlib.h"
+	"stdio.h"
+	<string.h>
+
+1585665329 c:\users\foxy\documents\github\floe\floe_project\game.h
+	<windows.h>
+	<string.h>
+	"Floe.h"
+
+1585665329 source:c:\users\foxy\documents\github\floe\floe_project\main.c
+	"game.h"
+
+1585263545 source:c:\users\foxy\documents\github\floe\floe_project\objects.c
+	"objects.h"
+
+1585665329 source:c:\users\foxy\documents\github\floe\floe_project\player.c
+	"Player.h"
+
+1585682065 source:c:\users\foxy\documents\github\floe\floe_project\game.c
+	"game.h"
+

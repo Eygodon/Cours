@@ -1,0 +1,34 @@
+/*le background*/
+.main{
+    background-image: url(../Images/pdptheme.jpg);
+    background-position: left top;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+/* on rend tout transparent*/
+body{
+    color: #FFFFFF;
+}
+
+p{
+    color: #FFFFFF;
+}
+
+a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+/* les puces de listes nonordonnées sont des flèches*/
+ li, li li {
+    list-style-image: url(../Images/puce.png);
+}
+ /*Un beau titre*/
+h1{
+    text-align: center;
+    font-size: 60px;
+    border-style: solid;
+    border-color: white;
+    border-radius:25px ;
+}
+

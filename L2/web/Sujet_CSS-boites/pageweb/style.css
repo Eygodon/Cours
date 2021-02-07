@@ -1,0 +1,34 @@
+/** FICHIER DE STYLE **/
+body{
+    color : red;
+    background-color : rgb(200,200,200);
+    text-align: justify;
+}
+h1{
+    border-color: blue;
+    border-style: dashed;
+}
+h1 span{
+    border-color: red;
+    border-style: solid;
+}
+img{
+    border-color: yellow;
+    border-width: 5px;
+    border-style: solid;
+}
+div.partie1{
+    border-color: green;
+    border-style: dotted;
+}
+div.partie1 p:first-child{
+    border-style: solid;
+    border-color: orange;
+}
+div.partie1 span{
+    border-style: solid;
+    border-color: purple;
+}
+h1, div, span, img{
+    margin: 20px;
+}  /** 1 margin égal sur chaque côté = un margin général**/

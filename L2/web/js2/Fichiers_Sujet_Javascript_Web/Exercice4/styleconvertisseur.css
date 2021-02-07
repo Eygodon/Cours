@@ -1,0 +1,19 @@
+h1
+{
+   text-align: center;
+   font-size: 120%;
+}
+
+table
+{
+   margin-left: auto;
+   margin-right: auto;
+   border: solid black 2px;
+   border-collapse : collapse;
+}
+
+th, td
+{
+   border: solid black 1px;
+   padding: 5px;
+}

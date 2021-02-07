@@ -1,0 +1,5 @@
+1.	Dans la balise script dans head
+2.	l.12 "onload" donc dès le chergement de la page 
+	l.17 onclick donc lors d'un clic sur l'image 
+	l.25 onmouseover/onmouseout
+	l.30 onclick

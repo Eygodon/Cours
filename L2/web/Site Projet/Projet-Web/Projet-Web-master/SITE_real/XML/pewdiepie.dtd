@@ -1,0 +1,42 @@
+<!ELEMENT pewdiepie (video+)>
+<!ATTLIST pewdiepie
+        user ID #REQUIRED>
+
+<!ELEMENT video (thumbnail,title,length,date,views,ratio,mark?)>
+<!ATTLIST video
+        number CDATA #REQUIRED
+        type (MemeReview|LWIAY|YLYL|VR Chat|Tik Tok|none|#PCDATA) #REQUIRED>
+
+<!ELEMENT thumbnail (img)>
+<!ATTLIST thumbnail
+        id ID #IMPLIED>
+
+<!ELEMENT title (#PCDATA)>
+<!ATTLIST title
+        id ID #IMPLIED>
+
+<!ELEMENT length (#PCDATA)>
+<!ATTLIST lenght
+        id ID #IMPLIED>
+
+<!ELEMENT date (#PCDATA)>
+<!ATTLIST date
+        id ID #IMPLIED>
+
+<!ELEMENT views (#PCDATA)>
+<!ATTLIST views
+        id ID #IMPLIED>
+
+<!ELEMENT ratio (#PCDATA)>
+<!ATTLIST ratio
+        id ID #IMPLIED>
+
+<!ELEMENT mark (#PCDATA)>
+<!ATTLIST mark
+        id ID #IMPLIED>
+
+<!ELEMENT img EMPTY>
+<!ATTLIST img
+        src CDATA #REQUIRED
+        alt CDATA #REQUIRED>
+

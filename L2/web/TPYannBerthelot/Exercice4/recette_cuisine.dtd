@@ -1,0 +1,45 @@
+<!ELEMENT recette (titre,listeingredients,listeustensiles,fabrication,cuisson?)>
+
+<!ELEMENT titre (#PCDATA)>
+
+<!ATTLIST recette
+	  niveau (facile|moyen|difficile) "facile"
+	  prix (petit|moyen|cher) "petit" >
+
+
+<!ELEMENT ingredient (#PCDATA)>
+
+<!ATTLIST ingredient
+	  qte CDATA #REQUIRED
+	  unit (l|dl|cl|kg|gramme|piece|cas|pincee) #REQUIRED>
+
+<!ELEMENT listeingredients (ingredient+)>
+
+<!ATTLIST listeingredients
+	  nbpersonnes CDATA #REQUIRED>
+
+<!ELEMENT ustensile (#PCDATA)>
+
+<!ATTLIST ustensile
+	  qte CDATA "1">
+
+<!ELEMENT listeustensiles (ustensile+)>
+
+
+<!ELEMENT etape (#PCDATA)>
+
+<!ATTLIST etape
+	  temps CDATA #IMPLIED>
+
+<!ELEMENT fabrication (#PCDATA|etape)*>
+
+<!ATTLIST fabrication
+	  temps CDATA #IMPLIED>
+
+<!ELEMENT cuisson EMPTY>
+
+<!ATTLIST cuisson
+	  temps CDATA #REQUIRED
+	  température CDATA #REQUIRED>
+
+

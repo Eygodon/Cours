@@ -1,0 +1,23 @@
+.main{
+    background-image: url(../../Images/pdptheme.jpg);
+    background-position: right top;
+    background-attachment: fixed;
+    background-size: auto;
+}
+
+.pagetitle {
+    text-align: center;
+    font-size: 60px;
+}
+
+body{
+    color: #FFFFFF;
+}
+
+p{
+    color: #FFFFFF;
+}
+
+a{
+    color: #FFFFFF;
+}

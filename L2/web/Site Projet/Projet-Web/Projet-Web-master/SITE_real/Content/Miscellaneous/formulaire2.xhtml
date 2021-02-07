@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>The PewDiePie Project</title>
+    <link rel="icon" type="image/png" href="../../Images/pdplogo.png"/>
+    <link rel="stylesheet" href="../../Styles/style.css"/>
+    <link rel="stylesheet" href="../../Styles/index.css"/>
+    <link rel="stylesheet" href="../../Styles/form.css"/>
+
+    <script type="application/javascript" src="../../Javascript/formulaire2.js"></script>
+</head>
+<body class="main">
+    <h1><a href="../Collection/categories.xhtml">The PewDiePie Project</a></h1>
+    <h4>You want a quizz ? There's one !</h4>
+    <div>
+        <form action="http://voca.univ-poitiers.fr/~subrenat/cours_web/traitement.php" method="post" id="form">
+            <fieldset>
+                <legend>Let's go, do you really know PewDiePie ?</legend>
+                <p>
+                    <label for="id_nom">Last name : </label>
+                    <input type="text" id="id_nom" name="nom" value=""/>
+                </p>
+                <p>
+                    <label for="id_prenom">First name : </label>
+                    <input type="text" id="id_prenom" name="prenom" value=""/>
+                </p>
+            <fieldset>
+                    <legend>What's his gender ?</legend>
+                    <label for="id_male">Male : </label>
+                    <input type="radio" id="id_male" name="genre" value="male"/><br/>
+                    <label for="id_female">Female : </label>
+                    <input type="radio" id="id_female" name="genre" value="female"/><br/>
+                    <label for="id_other">Other : </label>
+                    <input type="radio" id="id_other" name="genre" value="other"/>
+            </fieldset>
+                <p>
+                    <label for="id_date">When was created his YouTube Channel ?</label>
+                    <input type="date" id="id_date" name="date" value=""/>
+                </p>
+                <p>
+                    <label for="id_age">How old is he ?</label>
+                    <input type="text" id="id_age" name="age" value=""/>
+                </p>
+                <p>
+                    <label for="id_from">Where's he from ?</label>
+                    <select name="age" id="id_from" size="1">
+                        <option value="select">Select country</option>
+                        <option value="australia">Australia</option>
+                        <option value="argentina">Argentina</option>
+                        <option value="belgium">Belgium</option>
+                        <option value="brazil">Brazil</option>
+                        <option value="china">China</option>
+                        <option value="egypt">Egypt</option>
+                        <option value="france">France</option>
+                        <option value="greece">Greece</option>
+                        <option value="india">India</option>
+                        <option value="japan">Japan</option>
+                        <option value="mexico">Mexico</option>
+                        <option value="nigeria">Nigeria</option>
+                        <option value="sweden">Sweden</option>
+                        <option value="united_kingdom">United Kingdom</option>
+                        <option value="united_states">United States</option>
+                        <option value="yemen">Yemen</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="id_fiance">Who is PewDiePie's Fiancé ?</label>
+                    <input type="text" id="id_fiance" name="fiance" value=""/>
+                </p>
+                <p>
+                    <label for="id_opponent">Who's his worst opponent ?</label>
+                    <input type="text" id="id_opponent" name="opponent" value=""/>
+                </p>
+                <fieldset>
+                    <legend>Who hosted meme review ?</legend>
+                    <p id="checkboxs">
+                        <input type="checkbox" id="box_brad1" value="brad1"/>Brad 1<br/>
+                        <input type="checkbox" id="box_pewdiepie" value="pewdiepie"/>PewDiePie<br/>
+                        <input type="checkbox" id="box_drphil" value="drphil"/>Dr Phil<br/>
+                        <input type="checkbox" id="box_mrbeast" value="mrbeast"/>MrBeast<br/>
+                        <input type="checkbox" id="box_benshapiro" value="benshapiro"/>Ben Shapiro<br/>
+                        <input type="checkbox" id="box_jesus" value="jesus"/>Jesus Christ<br/>
+                        <input type="checkbox" id="box_roland" value="roland"/>Justin Roland<br/>
+                        <input type="checkbox" id="box_jacksepticeye" value="jacksepticeye"/>Jacksepticn't<br/>
+                        <input type="checkbox" id="box_shroud" value="shroud"/>Shroud<br/>
+                        <input type="checkbox" id="box_elonmusk" value="elonmusk"/>Elon Musk<br/>
+                        <input type="checkbox" id="box_pewdiepiedad" value="pewdiepiedad"/>PewDiePie's Dad<br/>
+                        <input type="checkbox" id="box_blueshirtkid" value="blueshirtkid"/>Blue Shirt Kid<br/>
+                        <input type="checkbox" id="box_notch" value="notch"/>Notch<br/>
+                    </p>
+                </fieldset>
+                <p>
+                    <label for="id_pewnews">Who's presenting Pew News ?</label>
+                    <input type="text" id="id_pewnews" name="pewnews" value=""/>
+                </p>
+            </fieldset>
+            <button  id="correct" type="button" onclick="correct_quizz()">Correct this !</button>
+        </form>
+        <div id="result"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+h1 {
+    text-align : center;
+}
+
+h1:first-child + table, h1:first-child +  * > table{
+   background-color : rgb(200,200,200);
+   width:100%;
+   color : rgb(200,0,0);
+    
+}
+
+table input {
+    display : inline-block;
+    float : right;
+}

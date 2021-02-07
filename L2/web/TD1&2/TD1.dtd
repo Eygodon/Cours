@@ -1,0 +1,31 @@
+<!ENTITY % resistance "(0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20)">
+<!ENTITY % bravery "(0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20)">
+<!ENTITY % intelligence "(0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20)">
+<!ENTITY % charisma "(0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20)">
+<!ENTITY % dexterity "(0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20)">
+<!ENTITY % strengh "(0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20)">
+<!ENTITY % magic "(0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20)">
+
+<!ELEMENT character (name, race, stats, skill*)>
+<!ATTLIST character id ID #IMPLIED>
+
+
+<!ELEMENT name (#PCDATA)>
+
+<!ELEMENT race (#PCDATA)>
+
+<!ELEMENT stats>
+<!ATTLIST stats
+            health (#PCDATA); #IMPLIED
+            level (#PCDATA); #IMPLIED
+            exp (#PCDATA); #IMPLIED
+            resistance %resistance ; #IMPLIED
+            bravery %bravery ; #IMPLIED
+            intelligence %intelligence ; #IMPLIED
+            charisma %charisma ; #IMPLIED
+            dexterity %dexterity ; #IMPLIED
+            strengh %strengh ; #IMPLIED
+            magic %magic ; #IMPLIED
+            an CDATA #IMPLIED>
+
+<!ELEMENT skills (#PCDATA)>

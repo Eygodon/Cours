@@ -1,0 +1,26 @@
+#inputs{
+    border-collapse : collapse;
+    border : solid 2px black;
+}
+
+#inputs tr:first-child + tr{
+    border-top : solid 2px black;
+}
+
+#inputs td:first-child{
+    font-style : italic;
+}
+
+#inputs tr:first-child > td:first-child{
+    font-weight : bold;
+}
+
+#game{
+    background-image : url("carte.png");
+    background-repeat : no-repeat;
+    background-position : center;
+    background-size : contain;
+    height : 500px;
+    margin-left : auto;
+    margin-right : auto;
+}

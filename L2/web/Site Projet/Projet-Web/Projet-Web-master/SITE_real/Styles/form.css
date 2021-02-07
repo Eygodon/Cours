@@ -1,0 +1,15 @@
+/* on défini l'intérieur du formulaire et les bordure arrondies*/
+fieldset{
+    text-align: left;
+    font-family: Verdana, serif;
+    font-size: medium;
+    border-radius: 20px;
+}
+/*On aime quand c'est rond*/
+label, input, select, option, button, textarea {
+    border-radius: 25px;
+}
+#correct{
+    position: absolute;
+    left: 50%;
+}

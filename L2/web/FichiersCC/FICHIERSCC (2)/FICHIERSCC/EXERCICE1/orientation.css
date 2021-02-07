@@ -1,0 +1,45 @@
+body{
+    background-color: antiquewhite;
+}
+
+form{
+    border : 1px brown solid;
+    width : 40%;
+}
+
+p{
+    width:100%;
+}
+#num_etu{
+    width: 30ch;
+}
+#infos{
+    display: table;
+}
+
+h1{
+    color : brown;
+}
+
+label,input,select{
+   display : table-cell;
+}
+
+label{
+    text-align: left;
+    width : 50%;
+}
+
+
+span{
+    display: table-row;
+    text-align: center;
+    width : 100%;
+    border : 1px brown solid;
+    padding : 5px;
+}
+
+
+#boutons{
+    text-align: center;
+}

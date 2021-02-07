@@ -30,7 +30,6 @@ public class Checkers extends GridPane {
         this.labels[0][0] = new Label(" ");
         BackgroundFill bgFill = new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY);
         Background bg = new Background(bgFill);
-
         for (int i = 0; i < GRID_SIZE; i++)
         {
             this.getRowConstraints().add(rc);
@@ -43,19 +42,15 @@ public class Checkers extends GridPane {
                 if (i == 1)
                 {
                     labels[j][0] = new Label(String.valueOf((char) (j + 64)));
-                    labels[i][0].setTextAlignment(TextAlignment.CENTER);
-                    labels[i][0].setAlignment(Pos.CENTER);
                     this.add(labels[j][0],j, 0);
                 }
                 if (j == 1)
                 {
                     labels[0][i] = new Label(String.valueOf(i));
-                    labels[0][j].setTextAlignment(TextAlignment.CENTER);
-                    labels[0][j].setAlignment(Pos.CENTER);
                     this.add(labels[0][i], 0, i);
 
                 }
-                labels[i][j] = new Label(" ");
+                labels[i][j] = new Label("");
                 labels[i][j].setBackground(bg);
                 labels[i][j].setTextAlignment(TextAlignment.CENTER);
                 labels[i][j].setAlignment(Pos.CENTER);
@@ -65,8 +60,8 @@ public class Checkers extends GridPane {
                 this.add(labels[i][j], i, j);
             }
         }
-        this.setStyle("-fx-border-width: 2; -fx-border-color: red; -fx-border-radius: 2px");
 
+        this.setStyle("-fx-border-width: 2; -fx-border-color: red; -fx-border-radius: 2px");
     }
 
     /********************* GETTERS **********************/
@@ -81,15 +76,16 @@ public class Checkers extends GridPane {
     /********************* SETTERS **********************/
     public void setPiece (Integer p, int x, int y)
     {
-        if (x < 10 && y < 10  && x >= 0 && y >= 0)
+        if (x < 10 && y < 10  && x >= 0 && y >= 0) {
             labels[x][y].setText(String.valueOf(p));
+        }
         else
             System.out.println("Votre déplacement est hors du damier");
     }
 
     public void setColorPiece(Color c, int x, int y){
         if (getPiece(x, y) != null){
-            labels[x][y].setStyle("-fx-highlight-text-fill:" + c);
+            labels[x][y].setBackground(new Background(new BackgroundFill(c, CornerRadii.EMPTY, Insets.EMPTY)));
         }
     }
 

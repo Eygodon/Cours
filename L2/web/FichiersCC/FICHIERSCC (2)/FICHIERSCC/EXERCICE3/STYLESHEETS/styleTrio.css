@@ -1,0 +1,49 @@
+#answer {
+    width : 40%;
+    border : 1px black solid;
+    padding : 5px;
+    display : inline-block;
+    margin-top:5%;
+    margin-left : 5%;
+    vertical-align: top;
+}
+
+#answer *{
+    display : list-item;
+    list-style-type: none;
+}
+
+#answer p button{
+    margin-top : 5%;
+    color : brown;
+    font-size: 1.5em;
+    border-style : none;
+    font-style : italic;
+    display: inline-block;
+    width : 30%;
+   
+}
+
+
+input{
+    margin:auto;
+    font-size: 1.5em;
+    text-align: center;
+    border : 1px solid black;
+}
+
+.operator,#result{
+    text-align: center;
+    font-size: 2em;
+}
+
+.operator{
+    color : green;
+}
+
+#result{
+    color : red;
+    background-color: yellow;
+    margin-left : auto;
+    margin-right: auto;
+}

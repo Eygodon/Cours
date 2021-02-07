@@ -1,0 +1,105 @@
+/*
+* Dans ce fichier sont données toutes les règles CSS, il ne manque QUE
+*  les sélecteurs appropriés spécifiés dans les commentaires.
+*/
+
+
+
+/* La couleur du fond de la page est "moccasin" */
+
+
+:root{
+    background-color : moccasin;
+}
+
+
+
+/* Les titres de niveau 1, 2 et 3 de la page sont écrits en "brown" */ 
+
+
+h1,h2,h3{
+    color : brown;
+}
+
+
+
+/* Les titres de niveau 2 ont une marge supérieure de 10 pixels */
+
+
+h2{
+    margin-top : 10px;
+}
+
+
+/* Les divisions situées juste après un titre de niveau 1 ont une
+   largeur de 30%, un texte centré, sont écrits en italique sur un
+   fond blanc */
+
+
+h1 + div{
+    width : 30%;
+    text-align: center;
+    font-style : italic;
+    background-color: white;
+}
+
+
+
+/* Les deuxièmes et troisièmes divisions après un titre de niveau 1
+   ont un affichage de type inline-block et un alignement vertical
+   "top" */
+
+
+div:nth-of-type(2),div:nth-of-type(3){
+    display : inline-block;
+    vertical-align : top;
+    
+}
+
+
+/* Le premier span inclus dans un item de liste est écrit en vert */
+
+
+li  span:first-child{
+    color : green;
+}
+
+
+/* Le deuxième span inclus dans un item de liste est écrit en gras */
+
+
+li span:nth-child(2){
+    font-weight : bold;
+}
+
+
+/* Les éléments de la classe "facultatif" sont écrits en italique */
+
+
+.facultatif{
+    font-style : italic;
+}
+
+
+/* La troisième division après un titre h1 ont une marge gauche de 10% */
+
+
+div:nth-of-type(3){
+    margin-left : 10%;
+}
+
+
+/* La cinquième division après un titre h1 a une largeur de 40%, une
+bordure arrondie de 25px, une marge interne de 1%, une marge externe
+haute de 10% et un fond blanc
+*/
+
+div:nth-last-of-type(1){
+   
+    width : 40%;
+    border-radius : 25px;
+    padding : 1%;
+    margin-top : 10px;
+    background-color : white;
+}
+

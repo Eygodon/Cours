@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TD1 SYSTEM "TD1.dtd">
+    <character id="tartomiel">
+        <name> Tartomiel </name>
+        <race> Elf </race>
+        <stats>
+          <ul>
+            <li>
+              Hp : <health> 25  </health>
+            </li>
+            <li>
+              Lvl : <level> 3 </level>
+            </li>
+            <li>
+              Exp : <exp> 400  </exp>
+            </li>
+            <li>
+              RES : <resistance> 9 </resistance>
+            </li>
+            <bravery> 9 </bravery>
+            <intelligence> 9 </intelligence>
+            <charisma> 9 </charisma>
+            <dexterity> 11 </dexterity>
+            <strenght> 10 </strenght>
+            <magic> 0 </magic>
+          </ul>
+        </stats>
+    <skills> chevaucher, naïveté touchante, premiers soins </skills>
+    </character>
+</TD1>

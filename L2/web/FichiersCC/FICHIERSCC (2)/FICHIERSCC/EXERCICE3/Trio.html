@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+   <head>
+      <title> TRIO : un jeu de calcul mental
+      </title>
+      <meta http-equiv="content-type" content="application/xhtml+xml;charset=UTF-8"/>
+       <link rel="stylesheet" href="STYLESHEETS/styleTrio.css"/>
+       <script type="application/javascript" src="JS/etu.js"></script>
+       <script type="application/javascript" src="JS/kernel.js"></script>
+       <script type="application/javascript" src="JS/htmlboard.js"></script>
+   </head>
+   <body onload="createBoard(9,9)">
+     <h1 onmouseover="switchImage()"> TRIO : un jeu de calcul mental <img src="IMAGES/trio-jeu.jpg" alt="illustration trio"/><img src="IMAGES/triomini.png" alt="illustration trio2" style="display: none"/> </h1>
+
+     <div id="grid">
+     </div>
+
+     <div id="answer">
+       <input type="text" name="op1" id="op1" value="a" readonly="readonly" size="1"/>
+       <span class="operator"> X </span>
+
+       <input type="text" name="op2" id="op2" value="b" readonly="readonly" size="1"/>
+       <span class="operator"> &plusmn; </span>
+
+       <input type="text" name="op3" id="op3" value="c" readonly="readonly" size="1"/>
+       <span class="operator"> = </span>
+
+       <span id="result" onclick="addResult(this);">Click me to begin the game</span>
+
+       <p>
+         <button type="button" onclick="checkTrio()"> Check </button>
+         <button type="button" onclick="replayTrio()"> Replay </button>
+         <button type="button" onclick="validateTrio()"> Validate  </button>
+       </p>
+       
+     </div>
+
+     <div id="solution">
+         <span>TEST</span>
+     </div>
+   </body>
+</html>

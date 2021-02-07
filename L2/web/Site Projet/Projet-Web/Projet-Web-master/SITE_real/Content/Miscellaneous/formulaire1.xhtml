@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>The PewDiePie Project</title>
+    <link rel="icon" type="image/png" href="../../Images/pdplogo.png"/>
+    <link rel="stylesheet" href="../../Styles/style.css" />
+    <link rel="stylesheet" href="../../Styles/index.css"/>
+    <link rel="stylesheet" href="../../Styles/form.css"/>
+
+    <script type="application/javascript" src="../../Javascript/formulaire1.js"></script>
+</head>
+<body class="main">
+    <h1><a href="../Collection/categories.xhtml">The PewDiePie Project</a></h1>
+    <h4>Wanna create a video page ? You're at the good place fellow 9 year old !</h4>
+    <div>
+        <form action="http://voca.univ-poitiers.fr/~subrenat/cours_web/traitement.php" method="post">
+            <fieldset>
+                <legend>Can we know you a bit ?</legend>
+                <p>
+                    <label for="id_nom">Last name : </label>
+                    <input type="text" id="id_nom" name="nom" value="" onblur="check_name(this)" placeholder=" Kjellberg"/>
+                </p>
+                <p>
+                    <label for="id_prenom">First name : </label>
+                    <input type="text" id="id_prenom" name="prenom" value="" onblur="check_name(this)" placeholder=" Felix"/>
+                </p>
+                <p>
+                    <label for="id_male">Male : </label>
+                    <input type="radio" id="id_male" name="genre" value="male" checked="checked"/><br/>
+                    <label for="id_female">Female : </label>
+                    <input type="radio" id="id_female" name="genre" value="female"/><br/>
+                    <label for="id_other">Other : </label>
+                    <input type="radio" id="id_other" name="genre" value="other"/>
+                </p>
+                <p>
+                    <label for="id_age">How old are you ?</label>
+                    <select name="age" id="id_age" size="1" onblur="check_age(this)">
+                        <option value="select">Select age</option>
+                        <option value="0-9">0 - 8</option>
+                        <option value="9">Exactly 9</option>
+                        <option value="10-19">10 - 19</option>
+                        <option value="20-29">20 - 29</option>
+                        <option value="30-39">30 - 39</option>
+                        <option value="40-49">40 - 49</option>
+                        <option value="50-59">50 - 59</option>
+                        <option value="60-69">60 - 69</option>
+                        <option value="70-79">70 - 79</option>
+                        <option value="80-89">80 - 89</option>
+                        <option value="90-99">90 - 99</option>
+                        <option value="100+">Over 100</option>
+                    </select>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>Let's talk about this video hum ?</legend>
+                <p>
+                    <label for="video_category">Video category ?</label>
+                    <select name="category" id="video_category" size="1" onblur="check_category(this)">
+                        <option value="select">Select</option>
+                        <option value="memereview">Meme Review</option>
+                        <option value="lwiay">LWIAY !</option>
+                        <option value="ylyl">YLYL</option>
+                        <option value="tiktok">Tik Tok</option>
+                        <option value="pewnews">Pew News</option>
+                        <option value="other">Other</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="video_name">Video name : </label>
+                    <input type="text" id="video_name" name="video_name" value="" onblur="check_string(this)"/>
+                </p>
+                <p>
+                    <label for="video_id">Video ID : </label>
+                    <input type="text" id="video_id" name="video_name" value="" onblur="check_string(this)"/>
+                </p>
+                <p>
+                    <label for="video_comment">A little comment about this video ?</label>
+                    <textarea id="video_comment" name="video_comment" rows="3" cols="35" onblur="check_string(this)"> </textarea>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>Sum data we need</legend>
+                <p>
+                    <label for="video_length">Length : </label>
+                    <input type="time" id="video_length" name="video_length" value="" onblur="check_length(this)"/>
+                </p>
+                <p>
+                    <label for="video_date">Date : </label>
+                    <input type="date" id="video_date" name="video_date" value="" onblur="check_date(this)"/>
+                </p>
+                <p>
+                    <label for="video_views">Views : </label>
+                    <input type="text" id="video_views" name="video_views" value="" onblur="check_number(this)"/>
+                </p>
+                <p>
+                    <label for="video_up">Thumbs up : </label>
+                    <input type="text" id="video_up" name="video_up" value="" onblur="check_number(this)"/>
+                </p>
+                <p>
+                    <label for="video_down">Thumbs down : </label>
+                    <input type="text" id="video_down" name="video_down" value="" onblur="check_number(this)"/>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>You want buttons ? We got'em </legend>
+                <div>
+                    <button type="reset"> Reset </button>
+                    <input type="submit" value=" Submit "/>
+                    <button type="button" onclick="check_form()"> Check Everything </button>
+                    <button type="button" onclick="exec_resume()"> Summarize </button>
+                    <button type="button" onclick="exec_page()"> Generate Page </button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

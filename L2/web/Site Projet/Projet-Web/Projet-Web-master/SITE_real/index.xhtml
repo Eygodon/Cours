@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>The PewDiePie Project</title>
+    <link rel="icon" type="image/png" href="Images/pdplogo.png"/>
+
+    <link rel="stylesheet" href="Styles/style.css"/>
+    <link rel="stylesheet" href="Styles/index.css" title="classic"/>
+
+    <script type="application/javascript" src="Javascript/main.js"></script>
+    <script type="text/javascript" src="Javascript/apirequests.js"></script>
+
+</head>
+<body class="main" onclick="write_time()" onload="api()">
+
+    <div>
+        <h1>The PewDiePie Project</h1>
+
+        <p>Let us present you this project.<br/>
+           Felix "PewDiePie" Kjellberg is the most famous Youtuber.<br/>
+           This Swedish english speaking gamer is daily posting videos about games, memes and news.<br/>
+           We GOT TO reach 100 Million before T-(bad)series<br/>
+           Do you want to join the project ?<br/>
+           Do you want to be an EPIC gamer ?
+        </p>
+
+        <h4 style="text-align:center">Only click if you're not a T-Series fighter</h4>
+    </div>
+
+    <div style="text-align:center">
+        <h4>The link is <a href="Content/Collection/categories.xhtml">here</a> bro, take it or leave it</h4>
+    </div>
+
+    <div style="text-align:center">
+        <img onclick="click_brofist()" id="brofistred" src="Images/pdpbrofistred.png" alt="Brofist" width="15%" height="15%" style="display:inline"/>
+        <img onclick="click_brofist()" id="brofistblue" src="Images/pdpbrofistredblue.png" alt="Brofist" width="15%" height="15%" style="display:none;"/>
+
+        <div style="text-align:right">
+            <h5>Wanna email us ? Do you need a Brofist or you have a suggestion ? Here we go,
+            <br/> <a href="mailto:yann.berthelot@univ.etu-poitiers.fr">Brad 1</a> and <a href="mailto:louis.leenart@univ.etu-poitiers.fr">Brad 2</a> are there for you.</h5>
+            <h5>Here's the <a href="Content/Miscellaneous/WebsiteMap.xhtml">website map</a>, and there a <a href="Content/Miscellaneous/SynopticTable.xhtml">synoptic table</a> and the <a href="Content/Miscellaneous/formulaire1.xhtml">formulaire 1</a> and <a href="Content/Miscellaneous/formulaire2.xhtml">formulaire 2</a>.</h5>
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <p id="time" >What time is it ? It's </p>
+            <button type="button" onclick="swap_style()" id="button_swap">Make style B I G G E R !</button>
+            <button type="button" id="secret_button" onclick="display_secret()">Don't Click - Very Secret</button>
+            <img src="Images/got_ya.png" alt="We got ya, you're a smart kid, but not enough" id="secret_img" height="144" width="256" style="display:none;"/>
+        </div>
+    </div>
+
+    <div class="parent">
+        <div id="pewds"> <!-- If nothing is showing up, the divs are empty, it's because the Youtube API's quota is exceeded. The reset is everyday at midnight-->
+            <h3 id="pewds__name">Pewdiepie</h3>
+            <h4 id="pewds__subs"> </h4>
+            <div id="pewds_lead"></div>
+        </div>
+
+        <div id="t-series">
+            <h3 id="t-series__name">T-Series</h3>
+            <h4 id="t-series__subs"> </h4>
+            <div id="t-series_lead"></div>
+        </div>
+    </div>
+</body>
+</html>

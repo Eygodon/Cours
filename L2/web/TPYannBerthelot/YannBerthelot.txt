@@ -1,0 +1,28 @@
+EXERCICE 2 :
+
+a) 
+L'erreur signifie qu'aucun fichier de strusture dtd n'est pris en compte dans le .html
+
+b)
+En reagrdant la document structure, on peut voir "html" en élément de racine
+Le message d'erreur indique une mauvaise déclaration de doctype et 
+une mauvaise source indiquée
+
+c)
+Html se trouve à la ligne 26 et contient les éléments " lat1 symbol et special 
+FIXED est ligne 241  avec en attribut xmlns
+On passe le validateur
+
+d)
+un <head> et <body>
+
+EXERCICE 3 
+
+a)
+on peut mettre des bloques et non pas du texte en direct, il faut déclarer de quel type il sagit
+b) 
+ATT#required : source et nom
+body: non h1 : oui p:oui a:oui form:non
+
+c)
+ 

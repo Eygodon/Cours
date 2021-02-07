@@ -1,0 +1,44 @@
+/* création du tableau récapitualtif */
+p {
+     font-size: larger;
+}
+
+table, td, th {
+    border: 1px solid white;
+    text-align: center;
+    font-size: large;
+    border-radius: 25px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 70%;
+    border-radius: 60px;
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+}
+
+td {
+    height: 30px;
+}
+
+tr:first-child {
+    height: 55px;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(188,188,188,0.7);
+}
+
+tr:nth-child(odd) {
+    background-color: rgba(112,112,112,0.85);
+}
+
+th {
+    background: rgba(0,0,0,0.65);
+}
+
+td:first-child, th:first-child {
+    text-align: left;
+    padding-left: 15px;
+}

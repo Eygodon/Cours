@@ -1,0 +1,10 @@
+body{font-size: x-large}
+
+img[alt=next]{
+    width: 5%;
+    float: right;
+}
+img[alt=previous]{
+    width: 5%;
+    float:bottom;
+}

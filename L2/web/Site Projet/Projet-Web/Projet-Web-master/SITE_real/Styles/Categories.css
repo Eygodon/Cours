@@ -1,0 +1,47 @@
+/* le titre de la page centré  et meilleure police*/
+h2{
+    text-align: center;
+    font-family: Verdana, serif ;
+}
+/*  positionnement et dimension des catégories*/
+.categories{
+    position: absolute;
+    width: 99%;
+    margin: 10px;
+}
+.categories > div {
+    float: left;
+    margin : 10px;
+    margin-outside: 10px;
+}
+.Category{
+    position: relative;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    width: 25%;
+    height: 5%;
+}
+/*réglage opacité et dimensiosn*/
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    border-radius: 15px;
+}
+/*Incrustation du nom des catégories dans la preview*/
+.CategoryName{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-family: Verdana, serif ;
+    color: black;
+    font-size: 20px;
+}
+#LWAIY, #TikTok{
+    left:11%;
+}
+#YLYL,#Other{
+    float: right;
+}

@@ -1,0 +1,51 @@
+/* Bordure et alignement du titre de la page*/
+
+/* changement de police pour le corps de texte*/
+div:first-child, #t-series__name, h4{
+    text-align: center;
+    font-family: Verdana, serif ;
+}
+/* positionnement de la division parent des subs counter*/
+.parent{
+    position: absolute;
+    width: 100%;
+}
+/* défini les division interne */
+.parent > div{
+     float: left;
+     margin: 10px;
+}
+/* placement des divisions enfants*/
+#pewds{
+    width: 40%;
+    position: relative;
+    left: 6%;
+    border: 3px solid white;
+    border-radius: 20px;
+}
+
+/*Positionnement des boites à sub counter dans la page avec centrage des textes*/
+#t-series{
+    width: 40%;
+    position: relative;
+    left :11%;
+    border: 3px solid white;
+    border-radius: 20px;
+}
+#t-series_lead{
+    text-align: center;
+    font-family: Verdana, serif
+}
+#time::first-line{
+    font-family: "Arial Black", serif;
+}
+
+input, select, textarea{
+    border-width: 3px;
+}
+
+#t-series_lead:first-child, #t-series_lead{
+    text-align: center;
+    font-family: Verdana, serif;
+}
+

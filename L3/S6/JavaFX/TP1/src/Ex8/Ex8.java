@@ -15,10 +15,11 @@ public class Ex8 extends Application {
     /********************* METHODS **********************/
     @Override
     public void start (Stage primaryStage){
-        Checkers root =new Checkers();
-        root.setPiece(5, 8, 2);
-        root.getPiece(8,2);
-        root.setColorPiece(Color.TURQUOISE, 8,2);
+        BorderPane root = new BorderPane();
+        TabGamers tabGamers = new TabGamers(3);
+        Checkers checker = new Checkers();
+        root.setLeft(checker);
+        root.setRight(tabGamers);
         Scene scene = new Scene(root);
 
         primaryStage.setTitle("TP1 Exo 8");

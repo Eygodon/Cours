@@ -1,0 +1,18 @@
+#ptab{
+	display :  table;
+}
+
+#buttons,#spannumcase,#spancontenucase{
+	display : table-cell;
+}
+
+#buttons{
+	vertical-align : middle;
+}
+
+
+#q5a, #q5b,label[for="contenucase"],label[for="numcase"],#contenucase,#numcase{
+	display : list-item;
+	list-style-type : none;	
+}
+

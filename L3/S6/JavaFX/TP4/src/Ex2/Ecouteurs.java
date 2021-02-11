@@ -1,4 +1,4 @@
-package Ex1;
+package Ex2;
 
 import javafx.event.Event;
 import javafx.event.EventHandler;

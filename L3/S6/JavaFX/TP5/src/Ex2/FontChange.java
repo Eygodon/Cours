@@ -31,35 +31,9 @@ public class FontChange extends Application {
     @Override
     public void start (Stage primaryStage){
         lab = new Label("Deus Vult");
-        tailleFonte = new SliderBetter("tailleFonte", 0, 50, 10);
+        tailleFonte = new SliderBetter("tailleFonte", 0, 50, 20);
         root = new BorderPane();
-        StringExpression style = new StringExpression() {
-            @Override
-            public String get() {
-                return "-fx-font-size:"+String.valueOf(tailleFonte.getValue());
-            }
-
-            @Override
-            public void addListener(ChangeListener<? super String> listener) {
-
-            }
-
-            @Override
-            public void removeListener(ChangeListener<? super String> listener) {
-
-            }
-
-            @Override
-            public void addListener(InvalidationListener listener) {
-
-            }
-
-            @Override
-            public void removeListener(InvalidationListener listener) {
-
-            }
-        };
-        lab.textProperty().bind(style);
+        lab.styleProperty().bind(Bindings.concat("-fx-font-size:", tailleFonte.valueProp()));
         Scene scene = new Scene(root, 500, 500);
         root.setCenter(lab);
         root.setBottom(tailleFonte);

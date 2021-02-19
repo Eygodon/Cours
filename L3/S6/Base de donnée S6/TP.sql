@@ -135,3 +135,32 @@ LOOP
     i := i+1;
 END loop;
 END;
+
+insert into  Marquer (joueurId, matchId, minute) values (
+        (SELECT joueurId from Joueur where nomJoueur = 'Cabella'),
+        (SELECT  matchId from Match inner join Equipe on match.equipeLocale = Equipe.equipeId
+            where dateMatch = to_date('07-02-2016', 'DD-MM-YYYY') and
+                  nomEquipe = 'Olympique de Marseille'),
+                                                         25)
+                                                         ;
+                                                         
+insert into  Marquer (joueurId, matchId, minute) values (
+        (SELECT joueurId from Joueur where nomJoueur = 'Ibrahimovic'),
+        (SELECT  matchId from Match inner join Equipe on match.equipeLocale = Equipe.equipeId
+            where dateMatch = to_date('07-02-2016', 'DD-MM-YYYY') and
+                  nomEquipe = 'Olympique de Marseille'),
+                                                         25)
+                                                         ;
+insert into  Marquer (joueurId, matchId, minute) values (
+        (SELECT joueurId from Joueur where nomJoueur = 'Di Maria'),
+        (SELECT  matchId from Match inner join Equipe on match.equipeLocale = Equipe.equipeId
+            where dateMatch = to_date('07-02-2016', 'DD-MM-YYYY') and
+                  nomEquipe = 'Olympique de Marseille'),
+                                                         25)
+                                                         ;
+
+update ligue set pays = upper(pays);
+
+delete from match where (scoreVisiteur - scoreLocale) =
+                        (select max(scoreVisiteur-Match.scoreLocale) from Match)
+;

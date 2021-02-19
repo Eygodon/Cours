@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
@@ -42,10 +43,13 @@ public class TestActionEvent extends Application {
         root.setTop(labMessage);
         root.setLeft(b1);
         root.setRight(b2);
+        b2.addEventHandler(ActionEvent.ACTION, new Ecouteurs( true, labMessage));
+        b2.addEventHandler(ActionEvent.ACTION, new Ecouteurs(true, labMessage));
+        b2.setOnAction(new Ecouteurs( false, labMessage));
+        b1.setOnAction(new Ecouteurs(false,labMessage));
+        circle.addEventHandler(MouseEvent.MOUSE_CLICKED, new Ecouteurs(true, labMessage));
+        root.addEventHandler(MouseEvent.MOUSE_CLICKED, new Ecouteurs(false,  labMessage));
 
-        b2.addEventHandler(ActionEvent.ACTION, new Ecouteurs("Boutton action 4", false));
-        b2.addEventHandler(ActionEvent.ACTION, new Ecouteurs("Handler B2", false));
-        b2.setOnAction(new Ecouteurs("On Action b2", false));
 
         Scene scene = new Scene(root);
 
@@ -54,3 +58,11 @@ public class TestActionEvent extends Application {
         primaryStage.show();
     }
 }
+/*
+    Question 1)
+    Deux setOnAction override le précédent.
+    Question 3)
+    Root et circle ne peuvent pas réagir à un Action.any, ni receveoir un ecouteur via SetOnAction.
+    Question 4)
+    javafx.scene.input.Mouse_event
+ */

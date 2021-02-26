@@ -1,6 +1,10 @@
 package Ex2;
 
-public class ButtonAleaTask {
+
+import javafx.scene.control.Button;
+
+
+public class ButtonAleaTask extends Button {
     /********************* CONSTANTS ********************/
 
 
@@ -8,6 +12,10 @@ public class ButtonAleaTask {
 
 
     /******************* CONSTRUCTORS *******************/
+    public ButtonAleaTask()
+    {
+        
+    }
 
 
     /********************* GETTERS **********************/

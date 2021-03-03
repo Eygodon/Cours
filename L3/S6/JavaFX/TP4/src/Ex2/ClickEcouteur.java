@@ -5,7 +5,7 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 
-public class ClickEcouteur implements EventHandler {
+public class ClickEcouteur implements EventHandler<MouseEvent> {
 
     /********************* CONSTANTS ********************/
 
@@ -27,7 +27,7 @@ public class ClickEcouteur implements EventHandler {
 
     /********************* METHODS **********************/
     @Override
-    public void handle (Event event) {
-
+    public void handle (MouseEvent event) {
+        label.setText("posX = " + event.getX() + "posY = " + event.getY());
     }
 }

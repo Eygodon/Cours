@@ -68,7 +68,7 @@ CREATE TABLE Marquer (
     minute NUMBER(3),
     CONSTRAINT PK_Marquer PRIMARY KEY (joueurId, matchId, minute),
     CONSTRAINT FK_Marquer_Match FOREIGN KEY (matchId) REFERENCES Match(matchId),
-    CONSTRAINT FK_Marquer_Joueur FOREIGN KEY (minute) REFERENCES Joueur(joueurId)
+    CONSTRAINT FK_Marquer_Joueur FOREIGN KEY (joueurId) REFERENCES Joueur(joueurId)
 );
 
 ALTER TABLE Marquer ADD seconde NUMBER(2);
@@ -120,7 +120,7 @@ select distinct home_team_api_id, home_player_1, (SELECT saisonId FROM SAISON WH
 FROM dataL3.MATCH
 WHERE home_player_1 is not null;
 
-set serveroutput on;
+/*set serveroutput on;
 DECLARE i INTEGER := 1;
 QUERY VARCHAR2(5000) := 'SELECT DISTINCT HOME_TEAM_API_ID, HOME_PLAYER_1, (SELECT FROM SAISONID WHERE LIBELLE = SEASON) from
 DATAL3.MATCH WHERE HOME_PLAYER_1 IS NOT NULL';
@@ -135,7 +135,7 @@ LOOP
     i := i+1;
 END loop;
 END;
-
+*/
 insert into  Marquer (joueurId, matchId, minute) values (
         (SELECT joueurId from Joueur where nomJoueur = 'Cabella'),
         (SELECT  matchId from Match inner join Equipe on match.equipeLocale = Equipe.equipeId
@@ -164,3 +164,124 @@ update ligue set pays = upper(pays);
 delete from match where (scoreVisiteur - scoreLocale) =
                         (select max(scoreVisiteur-Match.scoreLocale) from Match)
 ;
+
+SELECT nomJoueur, prenomJoueur, trunc((sysdate - dateNaissance)/365.25)
+  FROM joueur where datenaissance = (
+    SELECT max(dateNaissance) from joueur
+  );
+
+-- E2
+
+SELECT nomJoueur, prenomJoueur, trunc((sysdate - dateNaissance)/365.25), nomEquipe, nomLigue
+  FROM joueur, engager, equipe, ligue
+  WHERE joueur.joueurId = engager.joueurId
+    AND equipe.equipeId = engager.equipeId
+    AND equipe.ligueId = ligue.ligueId
+    AND dateNaissance = (
+      SELECT max(dateNaissance) FROM joueur
+    );
+    
+-- TP2
+
+
+-- A1
+-- à exécuter en tant qu'administrateur
+SHOW PARAMETER DB_BLOCK_SIZE; -- 8192 Ko
+
+-- A2
+-- taille du segment
+
+SELECT blocks, ((bytes / 1024) / 1024) AS Taille FROM user_segments WHERE SEGMENT_NAME = 'JOUEUR';
+
+-- taille moyenne d'une ligne
+SELECT blocks, ((bytes) / nb_lignes) AS Taille_moyenne_ligne FROM user_segments, (SELECT COUNT(*) AS nb_lignes FROM joueur) WHERE SEGMENT_NAME = 'JOUEUR';
+
+
+-- A3 
+SHOW PARAMETER DB_FILE_MULTIBLOCK_READ_COUNT;
+-- 36
+
+-- A4
+DESC user_indexes;
+SELECT * FROM user_indexes;
+
+SELECT 
+DECODE(index_type, 'NORMAL', 'B-Ttree'),
+DECODE(blevel, NULL, 0, blevel),
+DECODE(clustering_factor, NULL, 0, clustering_factor)
+FROM user_indexes;
+
+--A5
+
+select blocks, bytes/1024/1024 as Mo
+from user_segments
+where segment_name = 'PK_JOUEUR';
+
+--B1
+Exec dbms_stats.gather_schema_stats('TP');
+
+--B2
+SELECT * FROM user_tab_statistics
+Where TABLE_NAME = 'JOUEUR';
+
+--B3
+SELECT * FROM user_ind_statistics
+Where TABLE_NAME = 'JOUEUR';
+
+--B4
+EXEC dbms_stats.gather_table_stats('TP','Joueur');
+--B5
+select 
+  num_distinct,
+  to_char(utl_raw.cast_to_number(low_value)) as lv,
+  to_char(utl_raw.cast_to_number(high_value)) as hv,
+  num_nulls
+  from user_TAB_COL_STATISTICS where table_name = 'JOUEUR' and column_name = 'TAILLE'
+  ;
+  
+--B6
+
+SELECT   ENDPOINT_VALUE, ENDPOINT_NUMBER
+FROM     USER_TAB_HISTOGRAMS
+WHERE    TABLE_NAME = 'JOUEUR' AND COLUMN_NAME = 'TAILLE'
+ORDER BY ENDPOINT_NUMBER asc;
+
+--C1
+Set AUTOTRACE ON EXPLAIN;
+SET TIMING ON;
+SELECT * FROM joueur 
+WHERE taille > 2
+ORDER BY taille;
+
+--C2
+Set AUTOTRACE ON EXPLAIN;
+SET TIMING ON;
+select /*+ NO_INDEX(JOUEUR PK_JOUEUR) */ * from joueur where joueurId = 46509;
+
+Set AUTOTRACE ON EXPLAIN;
+SET TIMING ON;
+select /*+ INDEX(JOUEUR PK_JOUEUR) */ * from joueur where joueurId = 46509;
+
+--C3
+Set AUTOTRACE ON EXPLAIN;
+SET TIMING ON;
+select /*+ NO_INDEX(equipe PK_equipe) */ datematch, nom_equipe
+from match, equipe 
+where equipelocale=equipeid;
+
+Set AUTOTRACE ON EXPLAIN;
+SET TIMING ON;
+select /*+ INDEX(equipe PK_equipe) */ datematch, equipe.nomequipe
+from match, equipe 
+where equipelocale=equipeid;
+
+--D
+Set AUTOTRACE ON EXPLAIN;
+SET TIMING ON;
+select /*+ NO_INDEX(joueur idx_joueur_nom) */* from joueur where nomjoueur > 'von';
+
+create index idx_joueur_nom on joueur(nomjoueur);
+
+Set AUTOTRACE ON EXPLAIN;
+SET TIMING ON;
+select /*+ INDEX(joueur idx_joueur_nom) */ * from joueur where nomjoueur < 'von';

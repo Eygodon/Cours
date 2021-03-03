@@ -26,16 +26,17 @@ public class BorderPaneTest extends Application {
 
 
         BorderPane root = new BorderPane();
+        //On ne peut pas appeller set top par exemple deux fois sur deux nodes différents
+        root.setTop(button1);
+        root.setBottom(button2);
+        root.setLeft(button3);
+        root.setRight(button4);
+        root.setCenter(button5);
+
         BorderPane.setAlignment(button1, Pos.CENTER);
         BorderPane.setAlignment(button3, Pos.BOTTOM_LEFT);
         BorderPane.setAlignment(button4, Pos.TOP_RIGHT);
         BorderPane.setAlignment(button5, Pos.TOP_LEFT);
-        //On ne peut pas appeller set top par exemple deux fois sur deux nodes différents
-        //root.setTop(button1);
-        //root.setBottom(button2);
-        root.setLeft(button3);
-        root.setRight(button4);
-        root.setCenter(button5);
 
         Scene scene = new Scene(root, 300, 300);
 

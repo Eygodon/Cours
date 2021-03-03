@@ -43,12 +43,17 @@ public class TestActionEvent extends Application {
         root.setTop(labMessage);
         root.setLeft(b1);
         root.setRight(b2);
-        b2.addEventHandler(ActionEvent.ACTION, new Ecouteurs( true, labMessage));
+        /*b2.addEventHandler(ActionEvent.ACTION, new Ecouteurs( true, labMessage));
         b2.addEventHandler(ActionEvent.ACTION, new Ecouteurs(true, labMessage));
         b2.setOnAction(new Ecouteurs( false, labMessage));
         b1.setOnAction(new Ecouteurs(false,labMessage));
         circle.addEventHandler(MouseEvent.MOUSE_CLICKED, new Ecouteurs(true, labMessage));
         root.addEventHandler(MouseEvent.MOUSE_CLICKED, new Ecouteurs(false,  labMessage));
+        */
+
+        labMessage.addEventHandler(MouseEvent.MOUSE_CLICKED, new ClickEcouteur(labMessage));
+        circle.addEventHandler(MouseEvent.MOUSE_CLICKED, new ClickEcouteur(labMessage));
+        root.addEventHandler(MouseEvent.MOUSE_CLICKED, new ClickEcouteur(labMessage));
 
 
         Scene scene = new Scene(root);

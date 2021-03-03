@@ -7,23 +7,22 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 
-public class BorderWithQuitCLA extends BorderPane {
+public class BorderWithQuitLA extends BorderPane {
     /********************* CONSTANTS ********************/
 
 
     /********************* VARIABLES ********************/
-    Button quit;
+    private Button quit;
 
     /******************* CONSTRUCTORS *******************/
-    public BorderWithQuitCLA() {
+    public BorderWithQuitLA() {
         super();
         this.quit = new Button("Quit");
-        this.quit.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                Platform.exit();
-            }
-        });
+        this.quit.setOnAction( event -> {
+            Platform.exit();
+                }
+        );
+        this.setBottom(quit);
         BorderPane.setAlignment(quit, Pos.BOTTOM_RIGHT);
     }
 

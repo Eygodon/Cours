@@ -13,9 +13,9 @@ public class MyButton extends Button {
 
     /******************* CONSTRUCTORS *******************/
 
-    public MyButton (int line, int column)
+    public MyButton (int column, int line)
     {
-        super(String.valueOf(line) + String.valueOf(column));
+        super(String.valueOf(line) + ", " + String.valueOf(column));
         this.line = line;
         this.column = column;
     }

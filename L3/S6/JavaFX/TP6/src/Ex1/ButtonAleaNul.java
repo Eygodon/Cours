@@ -18,16 +18,17 @@ public class ButtonAleaNul extends Button {
     public ButtonAleaNul() {
         super("Tirer 100 000 000 lancers");
         this.coin = new AleaCoin();
-        this.event = new ActionEvent();
-        this.setOnAction(event -> {
-            this.setDisable(true);
-            this.textProperty().set("Je calcule");
-            this.coin.startLaunch(100000000);
-            int faces = this.coin.getFaces();
-            int piles = this.coin.getPiles();
-            this.textProperty().set(String.valueOf(faces) + " faces/" + String.valueOf(piles) + " piles");
-            this.setDisable(false);
-        });
+    }
+
+    public void go()
+    {
+        this.setDisable(true);
+        this.setText("Je calcule");
+        this.coin.startLaunch(100000000);
+        int faces = this.coin.getFaces();
+        int piles = this.coin.getPiles();
+        this.textProperty().set(faces + " faces/" + piles + " piles");
+        this.setDisable(false);
     }
 
     /********************* GETTERS **********************/

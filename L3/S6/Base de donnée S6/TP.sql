@@ -275,13 +275,80 @@ select /*+ INDEX(equipe PK_equipe) */ datematch, equipe.nomequipe
 from match, equipe 
 where equipelocale=equipeid;
 
---D
+--D1
 Set AUTOTRACE ON EXPLAIN;
 SET TIMING ON;
 select /*+ NO_INDEX(joueur idx_joueur_nom) */* from joueur where nomjoueur > 'von';
-
+drop index idx_joueur_nom;
 create index idx_joueur_nom on joueur(nomjoueur);
+drop index idx_prenom_joueur;
+create index idx_prenom_joueur on joueur(prenomjoueur);
+drop index idx_taille_joueur;
+create index idx_taille_joueur on joueur(taille);
+
+--D2
 
 Set AUTOTRACE ON EXPLAIN;
 SET TIMING ON;
 select /*+ INDEX(joueur idx_joueur_nom) */ * from joueur where nomjoueur < 'von';
+
+--D3
+SET AUTOTRACE ON EXPLAIN;
+SET TIMING ON;
+SELECT /* + INDEX(joueur idx_joueur_nom) */ * from joueur where nomjoueur > 'van';
+
+--D4
+SET AUTOTRACE ON EXPLAIN;
+SET TIMING ON;
+SELECT /* + INDEX(joueur idx_prenom_joueur) */ * from joueur where prenomjoueur is null;
+
+--D5
+SET AUTOTRACE ON EXPLAIN;
+SET TIMING ON;
+SELECT /*+ NO_INDEX( joueur idx_joueur_nom) */ * from joueur where  nomjoueur LIKE 'Ib%';
+
+--D6
+SET AUTOTRACE ON EXPLAIN;
+SET TIMING ON;
+SELECT /*+ NO_INDEX( joueur idx_joueur_nom) */ * from joueur where  nomjoueur LIKE '%oz';
+
+--D7
+SET AUTOTRACE ON EXPLAIN;
+SET TIMING ON;
+SELECT /*+ INDEX( joueur idx_joueur_nom) */ COUNT (*) from joueur where  nomjoueur LIKE '%oz';
+
+--D8
+SET AUTOTRACE ON EXPLAIN;
+SET TIMING ON;
+SELECT /*+ INDEX( joueur idx_joueur_nom) */ * from joueur where nomjoueur LIKE upper('macdonald');
+
+--D9
+SET AUTOTRACE ON EXPLAIN;
+SET TIMING ON;
+SELECT /*+ INDEX(joueur idx_taille_joueur) */ * from joueur where taille = '1,57' OR taille = '1,60' OR taille='1,63';
+
+--D10
+SET AUTOTRACE ON EXPLAIN;
+SET TIMING ON;
+SELECT /*+ NO_INDEX(joueur idx_taille_joueur) NO_INDEX(joueur idx_taille_joueur) */ * from joueur where taille = '2,03' AND nomjoueur LIKE 'M%';
+
+--D11
+SET AUTOTRACE ON EXPLAIN;
+SET TIMING ON;
+SELECT /*+ INDEX(joueur idx_taille_joueur) */ * from joueur where taille = '1,96' AND nomjoueur LIKE '%Z';
+
+--D12
+SET AUTOTRACE ON EXPLAIN;
+SET TIMING ON;
+select * from joueur where taille not in (1.65,1.68,1.7,1.73,1.75,1.78,1.8,1.83,1.85,1.88,1.91,1.93,1.96,1.98,2.01,2.03,2.08);
+--c'est comme la 9
+
+--D13
+SET AUTOTRACE ON EXPLAIN;
+SET TIMING ON;
+SELECT /*+ USE_HASH(equipe, match)*/ *
+FROM Equipe, match 
+WHERE equipe.equipeid = match.equipelocale;
+
+--D14 
+

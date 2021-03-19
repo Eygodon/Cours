@@ -18,6 +18,8 @@ public class Ex8 extends Application {
         BorderPane root = new BorderPane();
         TabGamers tabGamers = new TabGamers(3);
         Checkers checker = new Checkers();
+        checker.setPiece(5, 2, 2);
+        checker.setColorPiece(Color.TURQUOISE, 2, 2);
         root.setLeft(checker);
         root.setRight(tabGamers);
         Scene scene = new Scene(root);

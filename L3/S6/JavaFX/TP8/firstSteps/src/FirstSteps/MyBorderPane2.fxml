@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
+
+<?import FirstSteps.Scalar1D?>
+
+<fx:root type="javafx.scene.layout.BorderPane"
+         fx:id="borderPaneRoot"
+         maxHeight="-Infinity"
+         maxWidth="-Infinity"
+         minHeight="-Infinity"
+         minWidth="-Infinity"
+
+         fx:controller="FirstSteps.MyBorderPane2Controller"
+
+         xmlns:fx="http://javafx.com/fxml/1">
+
+    <bottom>
+        <Slider fx:id="sliderX" min="0" max="1" value="0.5"
+                onMouseClicked="#changeCircleColor" >
+        </Slider>
+    </bottom>
+
+    <right>
+        <Slider fx:id="sliderY" min="0" max="1" value="0.5" orientation="VERTICAL"
+                onMouseClicked="#changeCircleColor" >
+        </Slider>
+    </right>
+
+    <center>
+        <Pane>
+            <fx:define>
+                <Scalar1D fx:id="circleRadius" value1="50.0"> </Scalar1D>
+            </fx:define>
+            <fx:define>
+                <Scalar1D fx:id="invertSliderY" value1="1.0"> </Scalar1D>
+            </fx:define>
+
+            <children>
+                <Circle fx:id="circle"
+                        centerX="${(borderPaneRoot.width * sliderX.value)}"
+                        centerY="${(borderPaneRoot.height * (invertSliderY.value1 - sliderY.value))}"
+                        radius="$circleRadius.value1"  >
+                    <fill><Color  fx:value="red"/></fill>
+                </Circle>
+            </children>
+        </Pane>
+    </center>
+</fx:root>
+

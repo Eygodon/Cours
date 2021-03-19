@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+
+<fx:root fx:id="BorderPane2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" type="BorderPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BorderPane2Controller">
+   <bottom>
+      <Slider fx:id="SliderBottom" blockIncrement="0.1" max="1.0" onMouseClicked="#changeCircleColor" value="0.5" BorderPane.alignment="CENTER" />
+   </bottom>
+   <right>
+      <Slider fx:id="SliderRight" blockIncrement="0.1" max="1.0" onMouseClicked="#changeCircleColor" orientation="VERTICAL" value="0.5" BorderPane.alignment="CENTER" />
+   </right>
+   <center>
+      <Pane fx:id="Pane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Circle fx:id="Circle"
+                    centerX="${(BorderPane2.width * SliderBottom.value)}"
+                    centerY="${(BorderPane2.height * (invertSliderRight.value1 - SliderRight.value))}"
+                    fill="RED"
+                    layoutX="293.0"
+                    layoutY="193.0"
+                    radius="50.0" />
+         </children>
+      </Pane>
+   </center>
+</fx:root>

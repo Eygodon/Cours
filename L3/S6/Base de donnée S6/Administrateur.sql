@@ -8,3 +8,5 @@ CREATE USER c##Intern identified by tpIntern;
 GRANT c##tpAdmin TO c##admin;
 GRANT c##tpComment TO c##tpComment;
 GRANT c##tpInternaute TO c##Intern;
+grant create view to tp;
+GRANT CREATE MATERIALIZED VIEW TO TP;

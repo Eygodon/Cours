@@ -352,3 +352,126 @@ WHERE equipe.equipeid = match.equipelocale;
 
 --D14 
 
+--TP3
+--A1
+create view E5 as 
+select nomligue, sum(scorelocale + scorevisiteur) as nbbuts
+from match, equipe, ligue, saison
+where match.datematch between saison.datedeb and saison.datefin
+ and match.equipelocale = equipe.equipeid
+ and equipe.ligueid = ligue.ligueid
+ and saison.libelle = '2015/2016'
+group by ligue.ligueid, ligue.nomligue 
+order by sum(scorelocale + scorevisiteur) desc;
+
+select nomligue, sum(scorelocale + scorevisiteur) as nbbuts
+from match, equipe, ligue, saison
+where match.datematch between saison.datedeb and saison.datefin
+ and match.equipelocale = equipe.equipeid
+ and equipe.ligueid = ligue.ligueid
+ and saison.libelle = '2015/2016'
+group by ligue.ligueid, ligue.nomligue 
+order by sum(scorelocale + scorevisiteur) desc
+;
+
+--A2
+
+select equipe, sum(pts) as pts, count(*) as nombre_match
+from equipe_point
+group by equipe
+order by pts desc;
+
+CREATE or replace view E_classement as
+select equipe, SUM(pts) as points, COUNT(*) as MJ
+from equipe_point
+GROUP BY equipe
+ORDER BY points DESC;
+
+select avg(nbbuts), avg(nbbuts)/38
+from E5;
+
+--A3
+
+CREATE OR REPLACE VIEW a3_view AS
+SELECT equipe, count(*) as nb_match, sum(pts) as points, 
+sum(g) as G, sum(n) as N, sum(p) as P, 
+sum(bp) as BP, sum(bc) as BC, sum(db) as DB
+FROM equipe_point
+GROUP BY equipe
+ORDER BY points desc, G desc;
+
+create or replace view match_aller as 
+select nomequipe as equipe,
+        CASE 
+         WHEN scorelocale > scorevisiteur then 3
+         WHEN scorelocale = scorevisiteur then 1
+         ELSE 0
+        END as Pts,
+        CASE 
+         WHEN scorelocale > scorevisiteur then 1
+         ELSE 0
+        END as G,
+        CASE 
+         WHEN scorelocale = scorevisiteur then 1
+         ELSE 0
+        END as N,
+        CASE 
+         WHEN scorelocale < scorevisiteur then 1
+         ELSE 0
+        END as P,
+        scorelocale as BP,
+        scorevisiteur as BC,
+        scorelocale - scorevisiteur as DB
+from match, equipe, ligue, saison
+where match.datematch between saison.datedeb and saison.datefin
+ and match.equipelocale = equipe.equipeid
+ and equipe.ligueid = ligue.ligueid
+ and saison.libelle = '2014/2015'
+ and ligue.nomligue = 'France Ligue 1';
+ 
+ CREATE OR REPLACE VIEW E_JOUEUR_1990 as
+select * from JOUEUR
+where datenaissance >= '01/01/90'
+ORDER BY datenaissance;
+
+CREATE OR REPLACE VIEW player_before_90 AS
+    SELECT * FROM joueur
+    WHERE datenaissance > TO_DATE('01-01-1990', 'DD-MM-YYYY')
+    ORDER BY datenaissance;
+    
+    --A4
+INSERT INTO E_JOUEUR_1990 VALUES (100000,'Jean','Philippe','01/02/91',1.80,75.00);
+
+UPDATE E_JOUEUR_1990 SET taille = 1.81
+where JOUEURID = 100000;
+
+DELETE FROM E_JOUEUR_1990
+WHERE JOUEURID = 100000;
+
+--A5
+
+CREATE OR REPLACE VIEW E_JOUEUR_1990 as
+select * from JOUEUR
+where datenaissance >= '01/01/90' 
+ORDER BY datenaissance WITH CHECK OPTION;
+
+INSERT INTO E_JOUEUR_1990 VALUES (100000,'Jean','Philippe','01/02/89',1.80,75.00);
+
+CREATE OR REPLACE VIEW Equipe_detaille AS SELECT E.EQUIPEID, E.NOMEQUIPE, L.PAYS
+FROM EQUIPE E, LIGUE L
+WHERE L.LIGUEID = e.ligueid
+WITH CHECK OPTION;
+
+--A10
+CREATE MATERIALIZED VIEW material_view
+TABLESPACE USERS
+BUILD IMMEDIATE
+REFRESH complete
+ENABLE QUERY REWRITE
+AS 
+SELECT Equipe . nomequipe , MATCH . dateMatch
+FROM Equipe , MATCH
+WHERE Equipe . equipeid = MATCH . equipelocale;
+
+--A11
+

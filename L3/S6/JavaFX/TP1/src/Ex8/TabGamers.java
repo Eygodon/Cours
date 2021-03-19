@@ -14,7 +14,7 @@ public class TabGamers  extends TabPane {
 
     /********************* VARIABLES ********************/
 
-    private List<Tab> onglets;
+    private final List<Tab> onglets;
     /******************* CONSTRUCTORS *******************/
 
     public TabGamers(Integer nbJoueurs){

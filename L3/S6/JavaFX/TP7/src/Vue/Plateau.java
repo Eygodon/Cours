@@ -48,8 +48,16 @@ public class Plateau extends GridPane {
 
 
     /********************* GETTERS **********************/
-
-
+    public Label[][] getLabels() {
+        return labels;
+    }
+    public Integer getPiece (int x, int y)
+    {
+        if (x <= 10 && y <= 10  && x > 0 && y > 0 && !(labels[x][y].getText().equals(" ")))
+            return Integer.valueOf(labels[x][y].getText());
+        else
+            return null;
+    }
     /********************* SETTERS **********************/
 
 
